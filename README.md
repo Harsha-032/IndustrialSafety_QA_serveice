@@ -18,10 +18,31 @@ This system processes **PDF documents**, creates **searchable chunks**, and prov
 
 ## 📸 Preview  
 
-### 🔍 Web UI Example  
-<div align="center" width=50% height=50%>
+### 🔍 Web UI  
+<div align="center">
   <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/dashboard.png">
 </div>
+
+### 🔍 Initialization 
+<div align="center">
+  <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/Initialize.png">
+</div>
+
+### 🔍 Ask Industrial Questions
+<div align="center">
+  <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/ask_questions.png">
+</div>
+
+### 🔍 Result
+<div align="center">
+  <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/result.png">
+</div>
+
+### 🔍 Details
+<div align="center">
+  <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/check_details.png">
+</div>
+
 
 ---
 
@@ -37,7 +58,7 @@ This system processes **PDF documents**, creates **searchable chunks**, and prov
 
 ```bash
 # Clone repository
-git clone <your-repo-url>
+git clone https://github.com/Harsha-032/IndustrialSafety_QA_serveice
 cd industrial-safety-qa
 
 # Create virtual environment
@@ -50,6 +71,10 @@ pip install -r requirements.txt
 # Setup database
 python manage.py makemigrations
 python manage.py migrate
+
+# Runserver
+python manage.py runserver
+
 ```
 
 📂 **Add PDF Files**  
@@ -214,5 +239,10 @@ Ensure you have rights to process any PDF documents you use.
 - ✅ Check diagnostics page  
 - ✅ Verify PDF file names & structure  
 - ✅ Ensure dependencies are installed  
+
+## 📬 Contact
+
+**Harsha C**  
+📧 harshac032@gmail.com  
 
 
