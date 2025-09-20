@@ -1,0 +1,47 @@
+[
+  {
+    "category": "Machinery Regulations",
+    "questions": [
+      "What are the key requirements of the EU Machinery Regulation 2023/1230?",
+      "How does the new Machinery Regulation differ from previous directives?",
+      "What types of machinery are covered by Regulation (EU) 2023/1230?",
+      "What are the essential health and safety requirements for machinery?"
+    ]
+  },
+  {
+    "category": "Machine Safeguarding",
+    "questions": [
+      "What are the different types of machine guards and their applications?",
+      "How should employers protect employees from amputations when using machinery?",
+      "What are the OSHA requirements for machine guarding?",
+      "What are the six steps to creating a safe machine according to SICK?"
+    ]
+  },
+  {
+    "category": "Safety Standards",
+    "questions": [
+      "What are the main requirements of EN ISO 13849-1 for control systems?",
+      "How is functional safety of machine controls achieved according to ISO 13849?",
+      "What are the most important new features in the 2023 edition of EN ISO 13849-1?",
+      "What is the difference between EN ISO 13849-1 and IEC 62061?"
+    ]
+  },
+  {
+    "category": "Risk Assessment",
+    "questions": [
+      "How should risk assessment be performed for machinery safety?",
+      "What is the SISTEMA tool and how is it used for safety evaluation?",
+      "What factors should be considered when determining safety performance levels?",
+      "How are safety functions validated according to international standards?"
+    ]
+  },
+  {
+    "category": "Implementation",
+    "questions": [
+      "What pneumatic solutions are available for machine safety?",
+      "How can safety components be integrated into machine control systems?",
+      "What are the best practices for implementing safety functions in machinery?",
+      "How should safety systems be maintained and validated over time?"
+    ]
+  }
+]

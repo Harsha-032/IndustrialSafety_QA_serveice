@@ -1,0 +1,61 @@
+{% extends 'qa_app/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <div class="card p-4 mt-4">
+            <div class="card-body text-center">
+                <h1 class="card-title mb-4">
+                    <i class="fas fa-hard-hat text-primary me-2"></i>Industrial Safety Q&A
+                </h1>
+                <p class="lead mb-4">
+                    Ask questions about industrial and machine safety. Get answers from our curated document collection.
+                </p>
+                
+                <form method="get" action="{% url 'ask' %}">
+                    <div class="input-group mb-3">
+                        <input type="text" name="query" class="form-control form-control-lg" 
+                               placeholder="Ask a question about industrial safety...">
+                        <button class="btn btn-primary btn-lg" type="submit">
+                            <i class="fas fa-search me-1"></i> Search
+                        </button>
+                    </div>
+                </form>
+                
+                <div class="mt-4">
+                    <a href="{% url 'initialize' %}" class="btn btn-outline-primary">
+                        <i class="fas fa-cogs me-1"></i> Initialize System
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Question Suggestions -->
+        <div class="card p-4 mt-4">
+            <div class="card-body">
+                <h3 class="card-title mb-4">Suggested Questions</h3>
+                
+                {% for category in questions_by_category %}
+                <div class="mb-4">
+                    <h5 class="text-primary">{{ category.category }}</h5>
+                    <div class="row">
+                        {% for question in category.questions %}
+                        <div class="col-md-6 mb-2">
+                            <a href="{% url 'ask' %}?query={{ question|urlencode }}" class="text-decoration-none">
+                                <div class="card context-card h-100">
+                                    <div class="card-body py-2">
+                                        <p class="card-text mb-0">{{ question }}</p>
+                                        <small class="text-muted">Click to ask this question</small>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

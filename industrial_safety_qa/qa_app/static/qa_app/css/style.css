@@ -1,0 +1,117 @@
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #1e3c72 0%, #2a5298 100%);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-primary {
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.answer-box {
+    background-color: #e8f4f8;
+    border-left: 5px solid #2a5298;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.context-card {
+    border-left: 4px solid #2a5298;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.context-card:hover {
+    border-left: 4px solid #1e3c72;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.example-question {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.example-question:hover {
+    background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+    border-left: 4px solid #2a5298;
+    transform: translateX(5px);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, rgba(30, 60, 114, 0.9) 0%, rgba(42, 82, 152, 0.9) 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 40px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #2a5298;
+    margin-bottom: 15px;
+}
+
+.process-status {
+    transition: all 0.5s;
+}
+
+.score-badge {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.search-mode-badge {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #28a745 0%, #20c997 100%);
+}

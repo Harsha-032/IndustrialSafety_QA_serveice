@@ -1,0 +1,60 @@
+{% extends 'qa_app/base.html' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <div class="card p-4 mt-4">
+            <div class="card-body">
+                <h2 class="card-title mb-4">Ask a Question</h2>
+                
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.query.id_for_label }}" class="form-label">Your Question</label>
+                        {{ form.query }}
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="{{ form.top_k.id_for_label }}" class="form-label">Number of Results</label>
+                            {{ form.top_k }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.mode.id_for_label }}" class="form-label">Search Mode</label>
+                            {{ form.mode }}
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="fas fa-search me-1"></i> Ask Question
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card p-4 mt-4">
+            <div class="card-body">
+                <h4 class="card-title mb-3">Suggested Questions</h4>
+                
+                {% for category in questions_by_category %}
+                <div class="mb-3">
+                    <h6 class="text-primary">{{ category.category }}</h6>
+                    <div class="ms-3">
+                        {% for question in category.questions %}
+                        <div class="mb-2">
+                            <a href="{% url 'ask' %}?query={{ question|urlencode }}" class="text-decoration-none">
+                                <small class="text-muted">{{ question|truncatewords:10 }}</small>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

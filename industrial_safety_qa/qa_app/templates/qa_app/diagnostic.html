@@ -1,0 +1,110 @@
+{% extends 'qa_app/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card p-4 mt-4">
+            <div class="card-body">
+                <h2 class="card-title mb-4">
+                    <i class="fas fa-stethoscope text-primary me-2"></i>System Diagnostic
+                </h2>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div
+                            class="card {% if document_count > 0 %}bg-success text-white{% else %}bg-danger text-white{% endif %}">
+                            <div class="card-body text-center">
+                                <h5>Documents Loaded</h5>
+                                <h3>{{ document_count }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                            class="card {% if processed_document_count == document_count %}bg-success text-white{% else %}bg-warning{% endif %}">
+                            <div class="card-body text-center">
+                                <h5>Documents Processed</h5>
+                                <h3>{{ processed_document_count }}/{{ document_count }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6">
+                        <div
+                            class="card {% if chunk_count > 0 %}bg-success text-white{% else %}bg-danger text-white{% endif %}">
+                            <div class="card-body text-center">
+                                <h5>Chunks Created</h5>
+                                <h3>{{ chunk_count }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div
+                            class="card {% if chroma_count > 0 %}bg-success text-white{% else %}bg-danger text-white{% endif %}">
+                            <div class="card-body text-center">
+                                <h5>ChromaDB Entries</h5>
+                                <h3>{{ chroma_count }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% if chroma_count == 0 %}
+                <div class="alert alert-danger">
+                    <h5><i class="fas fa-exclamation-triangle me-2"></i>No embeddings found!</h5>
+                    <p class="mb-0">The system has no embeddings in ChromaDB. You need to initialize the system first.
+                    </p>
+                </div>
+                {% elif processed_document_count < document_count %} <div class="alert alert-warning">
+                    <h5><i class="fas fa-exclamation-triangle me-2"></i>Not all documents processed!</h5>
+                    <p class="mb-0">Only {{ processed_document_count }} out of {{ document_count }} documents have been
+                        processed.</p>
+            </div>
+            {% else %}
+            <div class="alert alert-success">
+                <h5><i class="fas fa-check-circle me-2"></i>System appears to be working correctly</h5>
+                <p class="mb-0">All diagnostics passed. If you're still not getting results, try the test search below.
+                </p>
+            </div>
+            {% endif %}
+
+            <!-- Add this alert if no chunks are found -->
+            {% if chunk_count == 0 %}
+            <div class="alert alert-danger">
+                <h5><i class="fas fa-exclamation-triangle me-2"></i>No chunks found!</h5>
+                <p class="mb-2">The system has no document chunks. This usually means PDF files weren't found or
+                    processed correctly.</p>
+                <a href="{% url 'check_pdfs' %}" class="btn btn-sm btn-outline-danger">
+                    <i class="fas fa-file-pdf me-1"></i> Check PDF Files
+                </a>
+            </div>
+            {% endif %}
+
+            <div class="mt-4">
+                <h4>Test Search</h4>
+                <form method="post" action="{% url 'ask' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="query" value="safety machinery">
+                    <input type="hidden" name="top_k" value="5">
+                    <input type="hidden" name="mode" value="reranked">
+                    <button type="submit" class="btn btn-info">
+                        <i class="fas fa-test-tube me-1"></i> Test with "safety machinery"
+                    </button>
+                </form>
+            </div>
+
+            <div class="mt-4">
+                <a href="{% url 'initialize' %}" class="btn btn-primary">
+                    <i class="fas fa-cogs me-1"></i> Initialize System
+                </a>
+                <a href="{% url 'index' %}" class="btn btn-outline-secondary ms-2">
+                    <i class="fas fa-arrow-left me-1"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
