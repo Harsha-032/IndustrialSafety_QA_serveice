@@ -169,24 +169,6 @@ curl -X POST http://localhost:8000/api/ask/   -H "Content-Type: application/json
 
 ---
 
-## 🖼️ Architecture Diagram  
-
-```mermaid
-flowchart TD
-    A[PDF Documents] --> B[Text Extraction]
-    B --> C[Chunking (300 words + overlap)]
-    C --> D[Embeddings with MiniLM]
-    D --> E[ChromaDB Vector Index]
-
-    F[Query Input] --> G[Semantic Search]
-    G --> H[BM25 Keyword Matching]
-    H --> I[Hybrid Reranker]
-    I --> J[Answer with Citations]
-    E --> G
-```
-
----
-
 ## 🐛 Troubleshooting  
 
 - **No chunks created** → Check `data/pdfs/` + verify `sources.json`  
