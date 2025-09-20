@@ -16,6 +16,40 @@ This system processes **PDF documents**, creates **searchable chunks**, and prov
 
 ---
 
+## 🛠️ Tech Stack  
+
+### 🔙 Backend Framework  
+- **Django 4.2.7** – High-level Python web framework for rapid development  
+- **Django ORM** – Database abstraction and management  
+- **SQLite** – Lightweight database for development and testing  
+
+### 🧠 Natural Language Processing  
+- **Sentence Transformers** – State-of-the-art embeddings (`all-MiniLM-L6-v2`)  
+- **Chromadb 0.4.15** – Vector database for embeddings & retrieval  
+- **Rank-BM25 0.2.2** – Keyword-based relevance scoring  
+- **Scikit-learn 1.3.0** – Machine learning utilities  
+
+### 📑 Document Processing  
+- **PyPDF2 3.0.1** – PDF text extraction & parsing  
+- **Python Standard Library** – File handling, JSON processing, utilities  
+
+### 🎨 Frontend & UI  
+- **Bootstrap 5.1.3** – Responsive CSS framework  
+- **Font Awesome 6.0.0** – Modern icon library  
+- **JavaScript** – Dynamic interactions & API calls  
+- **HTML5/CSS3** – Web standards for UI  
+
+### 🔗 API & Data Exchange  
+- **RESTful API** – JSON-based endpoints for external use  
+- **JSON** – Configuration & response format  
+
+### ⚙️ Development & Deployment  
+- **Python 3.8+** – Core programming language  
+- **Virtual Environment** – Dependency isolation  
+- **Pip** – Package management  
+
+---
+
 ## 📸 Preview  
 
 ### 🔍 Web UI  
