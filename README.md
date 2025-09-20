@@ -19,9 +19,9 @@ This system processes **PDF documents**, creates **searchable chunks**, and prov
 ## 📸 Preview  
 
 ### 🔍 Web UI Example  
-![Preview Screenshot](https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/dashboard.png?raw=true)  
-
-> *(Add your own screenshot by saving it as `docs/preview.png`)*  
+<div align="center">
+  <img src="https://github.com/Harsha-032/IndustrialSafety_QA_serveice/blob/main/industrial_safety_qa/screenshots/dashboard.png">
+</div>
 
 ---
 
